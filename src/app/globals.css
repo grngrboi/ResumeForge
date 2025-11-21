@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 96.1%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 240 67% 97%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 60% 97%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 5.9% 90%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 300 24% 86%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 0 0% 100%;
+    --ring: 240 67% 90%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 240 60% 80%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 300 20% 70%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 60% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 1.27cm;
+  }
+  body, html {
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    height: auto;
+    overflow: visible;
+  }
+  .no-print, .no-print * {
+    display: none !important;
+  }
+  main, aside {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #resume-preview-container {
+    padding: 0;
+    margin: 0;
+    transform: none !important;
+    width: 100%;
+    height: auto;
+  }
+  #resume-preview {
+    transform: scale(1) !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .section-item {
+    page-break-inside: avoid;
+  }
+  .break-before-page {
+    break-before: page;
+  }
+}
